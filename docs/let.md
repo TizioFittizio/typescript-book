@@ -74,7 +74,7 @@ if (true) {
 ```
 
 #### Switch
-You can wrap your `case` bodies in `{}` to reuse variable names reliably in different `case` statement as shown below: 
+Potete racchiudere il contenuto dei `case` in `{}` per riutilizzare i nomi delle variabili in modo affidabile in diversi `case` come mostrato di seguito: 
 
 ```ts
 switch (name) {
@@ -92,7 +92,7 @@ switch (name) {
 ```
 
 #### let in closures
-A common programming interview question for a JavaScript developer is what is the log of this simple file:
+Una domanda comune nei colloqui di programmazione per uno sviluppatore JavaScript è quale sia il log di questo semplice file:
 
 ```ts
 var funcs = [];
@@ -107,9 +107,9 @@ for (var j = 0; j < 3; j++) {
     funcs[j]();
 }
 ```
-One would have expected it to be `0,1,2`. Surprisingly it is going to be `3` for all three functions. Reason is that all three functions are using the variable `i` from the outer scope and at the time we execute them (in the second loop) the value of `i` will be `3` (that's the termination condition for the first loop).
+Ci si sarebbe aspettato che fosse "0,1,2". Sorprendentemente sarà `3` per tutte e tre le funzioni. La ragione è che tutte e tre le funzioni utilizzano la variabile `i` dall'outer scope e nel momento in cui le eseguiamo (nel secondo ciclo) il valore di `i` sarà `3` (che è la condizione di terminazione per il primo ciclo).
 
-A fix would be to create a new variable in each loop specific to that loop iteration. As we've learnt before we can create a new variable scope by creating a new function and immediately executing it (i.e. the IIFE pattern from classes `(function() { /* body */ })();`) as shown below:
+Una soluzione sarebbe quella di creare una nuova variabile in ogni loop specifica per quell'iterazione del loop. Come abbiamo imparato prima di poter creare un nuovo scope di variabili creando una nuova funzione ed eseguendola immediatamente (cioè il pattern IIFE delle classi `(function() { /* body */ })();`) come mostrato di seguito:
 
 ```ts
 var funcs = [];
@@ -127,11 +127,11 @@ for (var j = 0; j < 3; j++) {
     funcs[j]();
 }
 ```
-Here the functions close over (hence called a `closure`) the *local* variable (conveniently named `local`) and use that instead of the loop variable `i`.
+Qui le funzioni si chiudono sopra (da qui il nome di "closure") la variabile *local* (convenientemente chiamata "local") e usano quella al posto della variabile loop "i".
 
-> Note that closures come with a performance impact (they need to store the surrounding state).
+> Si noti che le closure hanno un impatto sulle prestazioni (devono conservare lo stato circostante).
 
-The ES6 `let` keyword in a loop would have the same behavior as the previous example:
+La parola chiave ES6 `let` in un ciclo avrebbe lo stesso comportamento dell'esempio precedente:
 
 ```ts
 var funcs = [];
@@ -147,10 +147,10 @@ for (var j = 0; j < 3; j++) {
 }
 ```
 
-Using a `let` instead of `var` creates a variable `i` unique to each loop iteration.
+Utilizzando `let` invece di `var` si crea una variabile `i` unica per ogni iterazione del loop.
 
-#### Summary
-`let` is extremely useful to have for the vast majority of code. It can greatly enhance your code readability and decrease the chance of a programming error.
+#### Riepilogo
+`let` è estremamente utile per la maggior parte del codice. Può migliorare notevolmente la leggibilità del codice e diminuire la possibilità di un errore di programmazione.
 
 
 
