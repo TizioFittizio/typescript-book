@@ -51,7 +51,7 @@ var foo: number = '123'; // Error: cannot assign a `string` to a `number`
 Discuteremo tutti i dettagli della sintassi dell' annotazione supportata in TypeScript in un capitolo più avanti.
 
 ### I Tipi sono strutturali
-In diversi linguaggi (specificatamente quelli tipizzati) la tipizzazione statica risulta cerimoniosa anche perchè *sapendo già* che il codice funzionerà la semantica del linguaggio ti costringe a copiare sempre le stesse cose. Questo è il motivo perchè cose come l'[automapper per C#](http://automapper.org/) è vitale per C#. Siccome vogliamo che TypeScript sia facile per gli sviluppatori JavaScript con un minimo carico di conoscenze, i tipi sono *strutturali*. Questo significa che il [duck typing](https://it.wikipedia.org/wiki/Duck_typing) è un costruttore di linguaggi di prima categoria. Considera il seguente esempio. La funzione `iTakePoint2D` accetterà qualsiasi cosa che comprende tutto ciò che si aspetta (`x` e `y`):
+In diversi linguaggi (specificatamente quelli tipizzati) la tipizzazione statica risulta cerimoniosa anche perchè *sapendo già* che il codice funzionerà la semantica del linguaggio ti costringe a copiare sempre le stesse cose. Questo è il motivo perchè cose come l'[automapper per C#](http://automapper.org/) è vitale per C#. Siccome vogliamo che TypeScript sia facile per gli sviluppatori JavaScript con un minimo carico cognitivo, i tipi sono *strutturali*. Questo significa che il [duck typing](https://it.wikipedia.org/wiki/Duck_typing) è un costrutto di prim'ordine. Considera il seguente esempio. La funzione `iTakePoint2D` accetterà qualsiasi cosa che comprende tutto ciò che si aspetta (`x` e `y`):
 
 ```ts
 interface Point2D {
